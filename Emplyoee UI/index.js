@@ -1,19 +1,22 @@
-let tbody = document.getElementById("tbody");
+
+let tbody = document.getElementById("tbody")
+
+
 
 // fetch function
 fetch("http://localhost:3000/user")
-  .then((res) => res.json())
-  .then((json) => {
-    json.map((data) => {
-      console.log(data);
-      tbody.append(td_fun(data));
-    });
-  });
+    .then(res => res.json())
+    .then(json => {
+        json.map(data => {
+            console.log(data)
+            tbody.append(td_fun(data));
+        })
+    })
 
 // create td
-function td_fun({ profile, name, email, status, role }) {
-  let td = document.createElement("tr");
-  td.innerHTML = `
+function td_fun({ profile, name, email, status, role}){
+    let td = document.createElement('tr');
+    td.innerHTML = `
     <td class="px-6 py-4 whitespace-nowrap">
         <div class="flex items-center">
                 <div class="flex-shrink-0 h-10 w-10">
@@ -38,5 +41,5 @@ function td_fun({ profile, name, email, status, role }) {
         <span class="text-sm text-gray-500">${role}</span>
     </td>
     `;
-  return td;
+    return td;
 }
