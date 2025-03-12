@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Admin Dashboard</title>
+</head>
+<body>
+
+<h1>Admin Dashboard</h1>
+<div id="userList"></div>
+<button onclick="logout()">Logout</button>
+
+<script>
+const user = JSON.parse(localStorage.getItem('loggedInUser'));
+if(!user || user.role !== 'admin') {
+    window.location.href = 'index.html';
+}
+
+function fetchUsers() {
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    const userList = document.getElementById('userList');
+    userList.innerHTML = '';
+
+    users.forEach((user, index) => {
+        const div = document.createElement('div');
+        div.innerHTML = `
+            <p><strong>Name:</strong> ${user.name}</p>
+            <p><strong>Email:</strong> ${user.email}</p>
+            <p><strong>Role:</strong> ${user.role}</p>
+            <button onclick="deleteUser(${index})">Delete User</button>
+            <hr>
+        `;
+        userList.appendChild(div);
+    });
+}
+
+function deleteUser(index) {
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    users.splice(index, 1);
+    localStorage.setItem('users', JSON.stringify(users));
+    fetchUsers();
+}
+
+function logout() {
+    localStorage.removeItem('loggedInUser');
+    window.location.href = 'index.html';
+}
+
+fetchUsers();
+</script>
+
+</body>
+</html>
