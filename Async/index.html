@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form handling</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <form action="login.html" method="post" id="formLogin">
+        <h2>Login Form</h2>
+        <input
+          type="text"
+          name="username"
+          id="username"
+          placeholder="Username"
+        />
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Password"
+        />
+        <button type="submit">Submit</button>
+        <div id="response"></div>
+      </form>
+    </div>
+    <script>
+      const loginForm = document.getElementById("formLogin");
+      const responseDiv = document.getElementById("response");
+      let userData = null;
+
+      const showData = function (error, userData) {
+        if (!error)
+          responseDiv.innerHTML =
+            userData.name + " logged in, Redirecting you...";
+        else responseDiv.innerHTML = error;
+      };
+      const verifyLogin = function (username, password, callbackFunction) {
+        setTimeout(() => {
+          if (username == "abc" && password == "123") {
+            userData = { name: "ABC", username: "abc" };
+            callbackFunction(null, userData);
+          } else {
+            error = "Login Failed";
+            callbackFunction(error);
+          }
+        }, 1000);
+      };
+
+      loginForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        let username = document.getElementById("username").value;
+        let password = document.getElementById("password").value;
+        verifyLogin(username, password, showData);
+      });
+    </script>
+    <script src="callback.js"></script>
+  </body>
+</html>
