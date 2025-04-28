@@ -1,6 +1,5 @@
 Bro Code JavaScript
 
-`````````````````````````````````````````````````````````````````````````````````````md
 1. Variable = A container that stores a value. Behaves as if it were the value it contains.
    declaration let x;
    assignment x = 100;
@@ -11,10 +10,13 @@ Bro Code JavaScript
 3. How to accept user input
    Easy way = window.prompt
    professional way = html textbox
+
+   `````````````````````````````````````````````````````````js
    document.getElementById("mySubmit").onclick = function(){
    username = document.getElementById("myText").value;
    document.getElementById("myH1").textContent = `Hello ${username}`
    }
+   ``````````````````````````````````````````````````````````
 
 4. Type conversion = change the datatype of a value to another (Strings, numbers, booleans)
 
@@ -58,27 +60,33 @@ Bro Code JavaScript
 17. While loop = repeat some WHILE some condition is true
 
 18. for loop = repeat some code a limited amount of times
+
+    ```````````````````````````````````````````js
     for (let i = 0; i<= 2; i++){ console.log(i)}
+    `````````````````````````````````````````````
 
 19. Function = A section of reusable code.
     Declare code once, use it whenever you want.
     call the function to execute that code.
 
+    ````````````````````````````````````````js
     function happBirthday(){
     console.log('Happy Birthday')
     }
     happBirthday(); //call the function
+    ``````````````````````````````````````````
 
 ## Function with parameter
-
+   ````````js
 function happBirthday(username){
 console.log(`Happy birthday ${username}!`)
 }
 happBirthday(); //call the function
 happBirthday("BroCode")
+````````````````````````````
 
-Function with return keyword
-
+## Function with return keyword
+`````````````````````````````````````````js
 function add(x, y){
 let result = x + y;
 return result;
@@ -95,10 +103,13 @@ return false;
 }
 }
 console.log(isValidEmail("Bro@fake.com"));
+`````````````````````````````````````````````
 
 21. Variable scope = where a variable is recognized and accessible(local vs global)
 
 22. Array = a variable like structure that can hold more than 1 value
+
+````````````````````````````````````````````js
     let fruits = ["apple", "orange", "bannana"];
 
     fruits.push("Coconut") //adds at last
@@ -108,7 +119,7 @@ console.log(isValidEmail("Bro@fake.com"));
     fruits.length; // gives the length of array
     fruits.indexOf("apple") // gives the index of array
     fruits.sort().reverse() // sorts alphabetically and gives reverse array
-    for(let i = 0; i < fruits.length-1; i++){ // display the element in array
+    for(let i = 0; i <br fruits.length-1; i++){ // display the element in array
     console.log(fruits[i])
     }
 
@@ -118,9 +129,12 @@ console.log(isValidEmail("Bro@fake.com"));
     }
     console.log(fruits[0]); //accessing the element
 
+````````````````````````````````````````````````````
+
+
 23. Spread Operator = ... allows an iterable such as an array or string to be expanded into separate
     elements (unpacks the elements)
-
+```````````````````````````````````````````````````````js
     let numbers = [1, 2, 3, 4, 5];
     let maximum = Math.max(..numbers);// if ... is not mentioned it gives NaN error due to max()
     console.log(maximum)
@@ -129,19 +143,22 @@ ex -2
 let username = "Bro Code";
 let letters = [...username].join("-")
 console.log(letters)
+
 ex-3 To combine different arrays and add some more element to shallow copy
 let fruits = ["apple", "orange", "banana"];
 let vegetables = ["carrots", "celery", "potatoes"];
 let foods = [...fruits, ...vegetables, "eggs", "milk"];
 console.log(foods);
+`````````````````````````````````````````````````````````````````````````````
 
 24. Rest parameter = (...rest) allow a function work with a variable number of arguments by bundling
     them into an array
     combines the element and bundles into an array
 
-                           spread = expands an array into separate elements
-                           rest = bundles separate elements into an array
+ spread = expands an array into separate elements
+ rest = bundles separate elements into an array
 
+``````````````````````````````````````````````````js
     function openFridge(...foods){
     console.log(foods); // display all values in single array
     console.log(...foods); // seperates the elements
@@ -154,11 +171,12 @@ const food4 = "sushi";
 cost food5 = "ramen";
 
 openFridge(food1, food2, food3, food4, food5);
-
+``````````````````````````````````````````````````````````````
 25. Callback = a function that is passed as an argument to another function
     used to handle asynchronous operations: 1. Reading a file 2. Network requests 3. Interacting with databases
     "Hey, when you are done, call this function"
-    ex-1
+```````````````````````````````````````````````js
+   // ex-1
 
 sum(displayPage, 1, 2);
 function sum(callback, x, y){
@@ -166,17 +184,17 @@ let result = x + y;
 callback(result)
 }
 function displayConsole(result){
-cosole.log(result);
+console.log(result);
 }
 
 function displayPage(result){
 document.getElementById("myH1").textContent = result;
 }
 
-Take a two function hello() and goodye() function what if hello function takes too much time?
-when calling don't add '()' to parameter function
+//Take a two function hello() and goodye() function what if hello function takes too much time?
+//when calling don't add '()' to parameter function
 
-ex-2
+// ex-2
 
 hello(goodbye); // prints hello first and goodbye next
 function hello(callback){
@@ -187,17 +205,18 @@ callback();
 function goodbye(){
 console.log("Goodbye!");
 }
-
+``````````````````````````````````````````````````````````````````````````````````````````````
 26. ForEach() = method used to iterate over the elements of an array and apply a specified function(callback) to each element
     array.forEach(callback)
 
+````````````````````````````````````````````````````````js
 let numbers = [1, 2, 3, 4, 5];
 numbers. forEach(display)
 function display(element){
 console.log(element)
 }
 
-ex- 2
+//ex- 2
 let numbers = [1, 2, 3, 4, 5];
 
 numbers.forEach(double);
@@ -214,19 +233,22 @@ array[index] = element \*3;
 function display(element){
 console.log(element)
 }
+``````````````````````````````````````````````````````````
 
 27. map() = accepts a callback and applies that function to each element of an array,
     then return a new array
 
+````````````````````````````````````````````````js
 let numbers = [1, 2, 3, 4 ,5];
 let squares = numbers.map(square)
 console.log(squares);
 function square(element){
 return Math.pow(element, 2);
 }
-
+`````````````````````````````````````````````````````````````
 28. filter() = creates a new array by filtering out elements
 
+```````````````````````````````````````````````js
 let numbers = [1,2,3, 4, 5];
 let evens = numbers.filter(isEven)
 console.log(evens)
@@ -234,18 +256,19 @@ console.log(evens)
 function isEven(element){
 return element % 2 ===0;
 }
-
+`````````````````````````````````````````````````````````
 op- [ 2, 4 ]
 
 29. .reduce() = reduce the elements of an array to a single value
 
+````````````````````````````````````````````````js
 const prices = [5, 30, 10, 25, 15, 20];
 const total = prices.reduce(sum);
 console.log(`$${total.toFixed(2)}`)
 function sum(prev, next){
 return prev + next
 }
-
+````````````````````````````````````````````````
 30. function declaration = define a reusable block of code that performs a specific task
     function expression = a way to define functions as values or variables
 1. Callbacks in asynchronous operations
@@ -253,6 +276,7 @@ return prev + next
 1. Closures
 1. Event Listeners
 
+```````````````````````````````````````````````js
 const hello = function(){
 console.log("Hello");
 }
@@ -260,10 +284,11 @@ console.log("Hello");
 setTimeout(function(){
 console.log("Goodbye");
 }, 5000);
-
+`````````````````````````````````````````````````````
 31. arrow functions = a concise way to write function expressions good for simple functions that you
     use only once(parameters) => some code
 
+````````````````````````````````````````````````js
 const hello = (name, age)=> console.log(`Hello ${name}`)
 console.log(`You are ${age} years old`)};
 hello("Bro", 25);
@@ -283,10 +308,10 @@ function hello(){
 console.log("Hello");
 }
 hello();
-
+``````````````````````````````````````````````````
 arrow functions = a concise way to write function expressions good for simple functions that you use only once
 (parameters) => some code
-
+```````````````````````````````````````````````js
 const numbers = [1, 2, 3, 4, 5, 6];
 const squares = numbers.map((element)=> Math.pow(element, 2));
 const cubes = numbers.map((element)=>Math.pow(element, 3));
@@ -294,10 +319,12 @@ const even = numbers.map((element)=>element%2 ===0);
 const odd = numbers.map((element)=> element%2 !==0);
 const total = numbers.reduce((accumulator, element)=> accumulator + element)
 console.log(total)
+`````````````````````````````````````````````````
 
 32. JavaScript Objects
     Object = A collection of related properties and or methods can represent real world objects
     (people, products, place)
+ `````````````````````````````````js
     object = {key: value,
     function()}
     const person1 = {
@@ -305,16 +332,18 @@ console.log(total)
     sayHello: function(){console.log("Hi! I am spongebob!")}
     }
 
-op
-{ firstName: 'Spongebob', sayhello: [Function: sayhello] }
-hi I am spongebob
-
+   //op
+//   { firstName: 'Spongebob', sayhello: [Function: sayhello] }
+//  hi I am spongebob
+``````````````````````````````````````````````````````````
 33. What is This
     this = reference to the object where THIS is used
     (the object depends on the immediate context)
+    ``````````````````````````````js
     person.name = this.name
-
+    ``````````````````````````````````````````
 ex-
+````````````````````````````js
 const person1 = {
 name:"Spongebob",
 favfood: "Chitranna",
@@ -324,6 +353,7 @@ person1.eat();
 
 op
 Spongebob likes to eat Chitranna
+`````````````````````````````````````````````````````
 
 34. Constructors
     constructor = special method for defining the properties and methods of objects
@@ -335,6 +365,8 @@ Spongebob likes to eat Chitranna
 36. Static keyword = keyword that defines properties or methods that belong to a class
     itself rather than the objects created from that class (class owns anything static,
     not the objects)
+
+``````````````````````````````````js
     class MuthUtil{
     static PI = 3.14;
     static getDiameter(radius){
@@ -344,13 +376,14 @@ Spongebob likes to eat Chitranna
     }
 
     console.log(MathUtil.getDiameter(10)) //20
+````````````````````````````````````````````````````````````````````
 
 37. Inheritance = allows a new class to inherit properties and methods from an existing class
     (parent -> child) helps with code reusability
 
         extends keyword is used between child and parent component
-
-    class Animal{
+`````````````````````````````````````````````````````````js
+class Animal{
 
 }
 class Rabbit extends Animal{
@@ -373,6 +406,7 @@ const hawk = new Hawk();
 console.log(hawk.alive);
 hawk.eat();
 hawk.sleep();
+``````````````````````````````````````````````````````````````````````````
 
 38. super = keyword is used in classes to call the constructor or access the properties and
     methods of a parent (superclass)
@@ -384,7 +418,7 @@ hawk.sleep();
     setter = special method that makes a property writeable
 
     validate and modify a value when reading/ writing a property
-
+````````````````````````````````````````````````````````````js
 class Rectangle{
 constructor(width, height){
 this.width = width;
@@ -418,6 +452,7 @@ const rectangle = new Rectangle(3,4);
 
 console.log(rectangle.width);
 }
+`````````````````````````````````````````````````````````````````
 
 40. Destructuring = extract values from arrays and objects, then assign them to variables in a
     convenient way
@@ -425,7 +460,7 @@ console.log(rectangle.width);
     {} = to perform object destructuring
 
 swap the value of two variables
-
+``````````````````````````````````````````````````js
 let a = 1;
 let b = 2;
 
@@ -437,13 +472,14 @@ console.log(b); // 1
 const colors = ["red", "green", "blue", "black", "white"];
 [colors[0], color[4]] = [colors[4], colors[0]];
 console.log(colors); //[ 'white', 'green', 'blue', 'black', 'red' ]
+``````````````````````````````````````````````````````````
 
 41. Nested objects = objects inside of other objects.
     Allows you to represent more complex data structures child object is encolosed by a parent object
 
                      person{Address{}, ContactInfo{}}
                      ShoppingCart{Keyboard{}, Mouse{}, Monitor{}}
-
+`````````````````````````````````````````````````````````js
 const person ={
 fullName: "SpongeBob Squarepants",
 age: 30,
@@ -460,8 +496,10 @@ country: "Int. Water"
 for(const property in person.address){
 console.log(person.addres(property))
 }
+```````````````````````````````````````````````````````````````````
 
 42. Array of objects
+``````````````````````````````````````````````````````js
     const fruits =[{name:"apple", color: "red", calories: 95 },
     {name:"orange", color: "orange", calories: 45 },
     {name:"banana", color: "yellow", calories: 105 },
@@ -470,8 +508,9 @@ console.log(person.addres(property))
     // --------map()-------------
 
 const fruitNames = fruits.map(fruit => fruit.name); // [ 'apple', 'orange', 'banana', 'coconut', 'pineapple' ]
-
+``````````````````````````````````````````````````````````````````````````
 // filter()--
+`````````````````````````````````````````````````````````````````js
 const yellowFruits = fruits.filter(fruit => fruit.color === "yellow");
 console.log(yellowFruits);
 // [
@@ -484,7 +523,7 @@ const maxFruit = fruits.reduce((max, fruit) => fruit.calories > max.calories? fr
 console.log(maxFruit);
 
 // op ->{ name: 'coconut', color: 'white', calories: 159 }
-
+``````````````````````````````````````````````````````````````````````````````
 42. Sorting = method used to sort elements of an array in place.
     Sorts elements as string in lexicographic order, not alphabetical
     lexicographic = (alphabet + numbers + symbols) as strings
@@ -536,6 +575,7 @@ let message = ""
     catch { } = catch and handle any thrown Errors from try{ }
     finally{ } = (optional) Always executes. Used mostly for clean up
     ex. close files, close connections, release resources
+    ```````````````````````````````````````````````````js
     try{
     Network errors
     Promise rejection
@@ -551,7 +591,7 @@ let message = ""
     console.log("This always executes")
     }
     console.log("You have reached the end!")
-
+`````````````````````````````````````````````````````````````````````
 50. What is the dom?
     Document Object Model
     Object { } that represents the page you see in the web browser and provides you with an Api to interact with it.
@@ -578,13 +618,13 @@ document > html > head > title > Mytitle > body > h1> A heading > a > href > "li
 .previousElementSibling
 .parentElement
 .children
-
+```````````````````````````````````````````````````````````````````````js
 const element = document.getElementById("fruits");
 
 const element = document.getElementById("pie");
 const nextSibling = document.nextElementSibling;
 nextSibling.style.backgroundColor = "yellow";
-
+`````````````````````````````````````````````````````````````````````````````
 for previous sibling -> previousElementSibling
 parent element -> parentElement
 children -> children
@@ -607,6 +647,7 @@ children -> children
     .addEventListener(event, callback);
 
 ex-1
+``````````````````````````````````````````js
 const myBox = document.getElementById("myBox");
 function changeColor(event){
 event.target.style.backgroundColor = "tomato";
@@ -627,6 +668,7 @@ display: flex;
 align-items: center;
 text-align: center;
 }
+```````````````````````````````````````````````````````
 
 55. Key events
     events: keydown, keyup
@@ -641,6 +683,7 @@ console.log(`key up = ${event.key}`);
 })
 
 56. Hide/show Html
+``````````````````````````````````````````````js
     const myButton = document.getElementById("myButton");
     const myImg = document.getElementById("myImg");
 
@@ -655,7 +698,7 @@ myButton.textContent = "Show";
 }
 
 })
-
+```````````````````````````````````````````````````````
 for preserving space use visibility property instead of display and attributes respectively
 
 57. NodeLists = Static collection of HTML elements by(id, class, element)
@@ -687,6 +730,7 @@ Do these chores in order
 2. Clean the kitchen
 3. Take out the Trash
 
+``````````````````````````````````````````````js
 function walkDog(callback){
 
 return new Promise((resolve, reject)=>{
@@ -708,6 +752,7 @@ setTimeout(()=>{
 console.log("You clean the kitchen🎸")
 }, 2500);
 }
+```````````````````````````````````````````````````````````
 
 61. Async/ Await = Async = makes a function return a promise
     Await = makes an async function wait for a promise
@@ -725,7 +770,9 @@ function walkDog
           JSON.stringify() = converts a JS object to a JSON string.
           JSON.parse() = converts a JSON string to a JS object
 
-ex- const names = ["Spongebob","Patrick", "Squidward", "Sandy"];
+ex- 
+`````````````````````````````````````````````````````js
+const names = ["Spongebob","Patrick", "Squidward", "Sandy"];
 const person = {
 "name": "Spongebob",
 "age": 30,
@@ -774,7 +821,7 @@ file name -> person.json
 }
 
 ]
-
+```````````````````````````````````````````````````````
 63. Fetch data from an API
     fetch = Function used for making HTTP requests to fetch resources.
     (JSON style data, images, files)
@@ -783,6 +830,7 @@ file name -> person.json
     over the web
     fetch(url, {options})
 
+```````````````````````````````````````````````````js
 fetchData();
 
 async function fetchData(){
@@ -826,8 +874,4 @@ fetch("person.json")
 .then(response => response.json())
 .then(values => values.forEach(value => console.log(value.isEmployed)))
 .catch(error => console.error(error));
-
-```
-
-```
-`````````````````````````````````````````````````````````````````````````````````````
+```````````````````````````````````````````````````
