@@ -1,19 +1,21 @@
-## 1  Semantic HTML, Forms, Accessiblity
+## 1. Semantic HTML, Forms, Accessiblity
 
-Semantic HTML
- Definition:
+**Semantic HTML**
+
+ **Definition**:
  Semantic HTML means using Html tags that describe their meaning clearly- for humans and machines
 
 #### Example
-`<header>, <nav>, <main>, <section>, articles, aside, footer`
+`<header>, <nav>, <main>, <section>, <articles> , <aside>,<footer>.`
 
-Why semantic Html
-Better SEO 
-Better Accessibility(screen reader)
-Easier for developers to read/maintain
+**Why**
+* Semantic Html
+* Better SEO 
+* Better Accessibility(screen reader)
+* Easier for developers to read/maintain
 
 
-````````````````````````
+````````````````````````html
  <article>
     <h2>Interview Preparation</h2>
     <p>Deep notes</p>
@@ -23,23 +25,23 @@ Easier for developers to read/maintain
 ## Forms
 `<form>, <input> <textarea> <button> <label> <select>, <option>`
 
-Important Attributes:
-`action -> Where to send form data`
-`method -> Get or POST`
-`required -> Must be filled.`
-`type -> Defines input type(text, email, number, password).`
+**Important Attributes:**
+* `action` -> Where to send form data
+* `method` -> Get or POST
+* `required` -> Must be filled.
+* `type`-> Defines input type(text, email, number, password).
 
-Accessibility Tip:
+**Accessibility Tip:**
 
 Always connect `<label>` with `<input> `using `for` and `id`.
 
 ## Flexbox
 
-`diplay: flex`  ->  Start flex behavior
-`flex-direction` -> Row(default)/ column
-`justify-content` -> Space along main axis(start, end, center, space-between)
-`align-items` -> Align on cross axis(start, center, stretch)
-`gap` -> Adds space between items
+* `diplay: flex`  ->  Start flex behavior
+* `flex-direction` -> Row(default)/ column
+* `justify-content` -> Space along main axis(start, end, center, space-between)
+* `align-items` -> Align on cross axis(start, center, stretch)
+* `gap` -> Adds space between items
 
 
 ```````````````````css
@@ -68,12 +70,12 @@ Grid = 2D layout system -> Arrange items in rows and columns
 
 Important Properties
 
-`display: grid` -> Start grid behavior
-`grid-template-columns` -> Define column layout
-`grid-template-rows`-> Define row layout
-`gap` -> Add space between rows/columns
-`grid-column` -> span item across columns
-`grid-row`-> span item across rows
+* `display: grid` -> Start grid behavior
+* `grid-template-columns` -> Define column layout
+* `grid-template-rows`-> Define row layout
+* `gap` -> Add space between rows/columns
+* `grid-column` -> span item across columns
+* `grid-row`-> span item across rows
 
 ``````````````````````````css
 .container{
@@ -121,9 +123,9 @@ Always mobile-first- design for small screens first, then larger ones.
  }
 `````````````````````````````````
 
-Semantic HTML → SEO, Accessibility, Structure
-Forms → Correct inputs, labels, accessibility
-Flexbox → 1D Layout (Row OR Column)
-Grid → 2D Layout (Row AND Column)
+* Semantic HTML → SEO, Accessibility, Structure
+* Forms → Correct inputs, labels, accessibility
+* Flexbox → 1D Layout (Row OR Column)
+* Grid → 2D Layout (Row AND Column)
 Media Queries → Screen-based styling
 Responsiveness → Mobile-first, flexible units

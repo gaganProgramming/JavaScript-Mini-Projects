@@ -5,9 +5,9 @@
 
 
 ## 1. Closures
-A closure is when a function rembers variables from its lexical scope(the scope which it was created), even after the outer function has finished execution.
+A closure is when a function remembers variables from its lexical scope(the scope which it was created), even after the outer function has finished execution.
 
-Understanding
+**Understanding**
 1. Inner function locks the environment of the outer function.
 2. It can still access outer variables  even when outer is gone.
 
@@ -30,14 +30,14 @@ myCounter();//3
 
 Real-world Usage of Closures
 
-1. Data hiding(private variables)
-2. Currying functions
-3. Event Handlers that access some "past" variables
-4. Factory function (functions returning other functions)
+* Data hiding(private variables)
+* Currying functions
+* Event Handlers that access some "past" variables
+* Factory function (functions returning other functions)
 
 2. Promises, async/await
 Promises
-Definition: 
+**Definition:** 
 A promise represents the results of an asynchronous operation - either fullfilled or rejected in the future
 
 
@@ -61,7 +61,7 @@ getData.then((data)=> console.log(data))
 ``````````````````````````````````
 
 ## async/await
-Definition:
+**Definition:**
 async turns a function into one that returns  a Promise.
 await pauses the function until the Promise resolves.
 
@@ -162,7 +162,7 @@ element.addEventListener('click', callback, true);
 Setting true as third argument activates capturing mode.
 
 Event Delegation
-definition
+**definition**
 Instead of adding event listeners to every chid, you add ONE listener to the parent and use event.target to detect the clicked child.
 
 Example
