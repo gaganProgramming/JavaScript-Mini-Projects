@@ -1,0 +1,4 @@
+useEffect(() =>{
+    // side effect logic here
+
+}, [dependencies])
